@@ -13,7 +13,7 @@ function Experience() {
     const { theme } = useContext(ThemeContext);
     const { isVisible, targetRef } = useElementVisible()
     return (
-        <div ref={targetRef} className="experience" id="experience" style={{ backgroundColor: theme.secondary }}>
+        <div ref={targetRef} className="experience" style={{ backgroundColor: theme.secondary }}>
             <div className="experience-body">
                 <div className="experience-image">
                     <img src={theme.expimg} alt="" />

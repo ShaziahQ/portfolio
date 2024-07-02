@@ -9,7 +9,7 @@ function Education() {
     const { theme } = useContext(ThemeContext);
     const {isVisible, targetRef}  = useElementVisible()
     return (
-        <div ref={targetRef} className="education" id="resume" style={{backgroundColor: theme.secondary}}>
+        <div ref={targetRef} className="education" style={{backgroundColor: theme.secondary}}>
             <div className="education-body">
                 <div className="education-description">
                 <h1 style={{color:theme.primary}}>Education</h1>

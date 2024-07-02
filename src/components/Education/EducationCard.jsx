@@ -23,7 +23,7 @@ function EducationCard({ id, institution, course, startYear, endYear, isVisible 
 
 
   return (
-    <Slide direction="right" timeout={1500} in={isVisible} unmountOnExit>
+    <Slide direction="right" timeout={1500} in={isVisible} mountOnEnter>
       <Container key={id} className={`education-card `}>
         <div className="educard-img" style={{ backgroundColor: theme.primary }}>
           <img

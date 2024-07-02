@@ -126,6 +126,7 @@ function Navbar() {
       return name;
     }
   };
+  return <></>
 
   return (
     <Container>

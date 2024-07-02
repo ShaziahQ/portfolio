@@ -7,13 +7,14 @@ const useElementVisible = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if(isVisible) return
-        setIsVisible(entry.isIntersecting);
+        if(!isVisible){
+          setIsVisible(entry.isIntersecting);
+        }
       },
       {
         root: null, // viewport
         rootMargin: '0px', // no margin
-        threshold: 0.5, // 50% of target visible
+        threshold: 0.1, // 50% of target visible
       }
     );
 

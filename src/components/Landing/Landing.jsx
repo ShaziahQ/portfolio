@@ -92,12 +92,14 @@ function Landing() {
 
                         <div className="lcr-buttonContainer">
                             {headerData.resumePdf && (
-                                <ResumeBtn variant="outlined" startIcon={<FaFileDownload />}>
+                                <ResumeBtn onClick={() => window.open(headerData.resumePdf)} variant="outlined" startIcon={<FaFileDownload />}>
                                     Download CV
                                 </ResumeBtn>
-
                             )}
-                            <ContactBtn variant="outlined">
+                            <ContactBtn variant="outlined" onClick={()=>{
+                                  const element = document.getElementById("contacts");
+                                  element.scroll = element.scrollHeight;
+                            }}>
                                 <a href="/#contacts" style={{ all: "unset" }} smooth={true} spy="true" duration={2000}>
                                     Contact
                                 </a>
