@@ -1,17 +1,17 @@
 import React, { useContext } from 'react';
 import styled from '@emotion/styled'
 
-// import Fade from 'react-reveal/Fade';
-
 import { ThemeContext } from '../../contexts/ThemeContext';
 
 import expImgWhite from '../../assets/svg/experience/expImgWhite.svg';
 import expImgBlack from '../../assets/svg/experience/expImgBlack.svg';
 
 import './Experience.css';
+import { Slide } from '@mui/material';
 
-function ExperienceCard({ id, company, jobtitle, startYear, endYear }) {
+function ExperienceCard({ id, company, jobtitle, startYear, endYear, isVisible }) {
   const { theme } = useContext(ThemeContext);
+
 
   const Container = styled.div({
     experienceCard: {
@@ -24,8 +24,7 @@ function ExperienceCard({ id, company, jobtitle, startYear, endYear }) {
 
 
   return (
-    // <Fade bottom>
-    <>
+    <Slide direction="left" timeout={1500} in={isVisible} unmountOnExit={false}>
       <Container key={id} className={`experience-card`}>
         <div className="expcard-img" style={{ backgroundColor: theme.primary }}>
           <img
@@ -41,8 +40,7 @@ function ExperienceCard({ id, company, jobtitle, startYear, endYear }) {
           <h5 style={{ color: theme.tertiary80 }}>{company}</h5>
         </div>
       </Container>
-    </>
-    // </Fade>
+    </Slide>
   );
 }
 

@@ -36,84 +36,87 @@ function Contacts() {
     setOpen(false);
   };
 
-  let ContactContainer = styled.div({
-    input: {
-      border: `4px solid ${theme.primary80}`,
-      backgroundColor: `${theme.secondary}`,
-      color: `${theme.tertiary}`,
-      fontFamily: 'var(--primaryFont)',
-      fontWeight: 500,
-      transition: 'border 0.2s ease-in-out',
-      '&:focus': {
-        border: `4px solid ${theme.primary600}`,
-      },
-    },
-    message: {
-      border: `4px solid ${theme.primary80}`,
-      backgroundColor: `${theme.secondary}`,
-      color: `${theme.tertiary}`,
-      fontFamily: 'var(--primaryFont)',
-      fontWeight: 500,
-      transition: 'border 0.2s ease-in-out',
-      '&:focus': {
-        border: `4px solid ${theme.primary600}`,
-      },
-    },
-    label: {
-      backgroundColor: `${theme.secondary}`,
-      color: `${theme.primary}`,
-      fontFamily: 'var(--primaryFont)',
-      fontWeight: 600,
-      fontSize: '0.9rem',
-      padding: '0 5px',
-      transform: 'translate(25px,50%)',
-      display: 'inline-flex',
-    },
-    socialIcon: {
-      width: '45px',
-      height: '45px',
-      borderRadius: '50%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '21px',
-      backgroundColor: theme.primary,
+  const socialIcon = {
+    width: '45px',
+    height: '45px',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '21px',
+    backgroundColor: theme.primary,
+    color: theme.secondary,
+    transition: '250ms ease-in-out',
+    '&:hover': {
+      transform: 'scale(1.1)',
       color: theme.secondary,
-      transition: '250ms ease-in-out',
-      '&:hover': {
-        transform: 'scale(1.1)',
-        color: theme.secondary,
-        backgroundColor: theme.tertiary,
-      },
+      backgroundColor: theme.tertiary,
     },
-    detailsIcon: {
-      backgroundColor: theme.primary,
+  }
+  const detailsIcon = {
+    backgroundColor: theme.primary,
+    color: theme.secondary,
+    borderRadius: '50%',
+    width: '45px',
+    height: '45px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '23px',
+    transition: '250ms ease-in-out',
+    flexShrink: 0,
+    '&:hover': {
+      transform: 'scale(1.1)',
       color: theme.secondary,
-      borderRadius: '50%',
-      width: '45px',
-      height: '45px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '23px',
-      transition: '250ms ease-in-out',
-      flexShrink: 0,
-      '&:hover': {
-        transform: 'scale(1.1)',
-        color: theme.secondary,
-        backgroundColor: theme.tertiary,
-      },
+      backgroundColor: theme.tertiary,
     },
-    submitBtn: {
-      backgroundColor: theme.primary,
+  }
+
+  let inputField = {
+    border: `4px solid ${theme.primary80}`,
+    backgroundColor: `${theme.secondary}`,
+    color: theme.tertiary,
+    fontFamily: 'var(--primaryFont)',
+    fontWeight: 500,
+    transition: 'border 0.2s ease-in-out',
+    '&:focus': {
+      border: `4px solid ${theme.primary600}`,
+    },
+  }
+
+  const messageStyle = {
+    border: `4px solid ${theme.primary80}`,
+    backgroundColor: `${theme.secondary}`,
+    color: `${theme.tertiary}`,
+    fontFamily: 'var(--primaryFont)',
+    fontWeight: 500,
+    transition: 'border 0.2s ease-in-out',
+    '&:focus': {
+      border: `4px solid ${theme.primary600}`,
+    },
+  }
+
+  const Label = styled.label({
+    backgroundColor: `${theme.secondary}`,
+    color: `${theme.tertiary}`,
+    fontFamily: 'var(--primaryFont)',
+    fontWeight: 600,
+    fontSize: '0.9rem',
+    padding: '0 5px',
+    transform: 'translate(25px,50%)',
+    display: 'inline-flex',
+  })
+
+  const SubmitBtn = styled.button({
+    backgroundColor: theme.primary,
+    color: theme.tertiary,
+    transition: '250ms ease-in-out',
+    '&:hover': {
+      transform: 'scale(1.08)',
       color: theme.secondary,
-      transition: '250ms ease-in-out',
-      '&:hover': {
-        transform: 'scale(1.08)',
-        color: theme.secondary,
-        backgroundColor: theme.tertiary,
-      },
+      backgroundColor: theme.tertiary,
     },
+
   })
 
 
@@ -149,8 +152,6 @@ function Contacts() {
   };
 
   return (
-    <ContactContainer>
-
       <div
         className="contacts"
         id="contacts"
@@ -162,47 +163,54 @@ function Contacts() {
             <div className="contacts-form">
               <form onSubmit={handleContactForm}>
                 <div className="input-container">
-                  <label htmlFor="Name" className={"label"}>
+                  <Label htmlFor="Name">
                     Name
-                  </label>
+                  </Label>
                   <input
                     placeholder="name"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => {
+                      e.preventDefault()
+                      console.log(e.target.value)
+                      setName(e.target.value)
+                    }}
                     type="text"
                     name="Name"
-                    className={`form-input input`}
+                    className={`form-input`}
+                    style={inputField}
                   />
                 </div>
                 <div className="input-container">
-                  <label htmlFor="Email" className={"label"}>
+                  <Label htmlFor="Email">
                     Email
-                  </label>
+                  </Label>
                   <input
                     placeholder="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     type="email"
                     name="Email"
-                    className={`form-input input`}
+                    className={`form-input`}
+                    style={inputField}
                   />
                 </div>
                 <div className="input-container">
-                  <label htmlFor="Message" className={"label"}>
+                  <Label htmlFor="Message">
                     Message
-                  </label>
+                  </Label>
                   <textarea
                     placeholder="Type your message...."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     type="text"
                     name="Message"
-                    className={`form-message message`}
+                    className={`form-message`}
+                    style={messageStyle}
                   />
                 </div>
 
                 <div className="submit-btn">
-                  <button type="submit" className={"submitBtn"}>
+                  <SubmitBtn type="submit">
                     <p>{!success ? 'Send' : 'Sent'}</p>
                     <div className="submit-icon">
                       <AiOutlineSend
@@ -222,7 +230,7 @@ function Contacts() {
                         }}
                       />
                     </div>
-                  </button>
+                  </SubmitBtn>
                 </div>
               </form>
               <Snackbar
@@ -262,53 +270,45 @@ function Contacts() {
                 href={`mailto:${contactsData.email}`}
                 className="personal-details"
               >
-                <div className={"detailsIcon"}>
-                  <FiAtSign />
+                <div style={detailsIcon}>
+                  <FiAtSign color='#fff'/>
                 </div>
                 <p style={{ color: theme.tertiary }}>{contactsData.email}</p>
               </a>
               <a href={`tel:${contactsData.phone}`} className="personal-details">
-                <div className={"detailsIcon"}>
-                  <FiPhone />
+                <div style={detailsIcon}>
+                  <FiPhone color='#fff'/>
                 </div>
                 <p style={{ color: theme.tertiary }}>{contactsData.phone}</p>
               </a>
               <div className="personal-details">
-                <div className={"detailsIcon"}>
-                  <HiOutlineLocationMarker />
+                <div style={detailsIcon}>
+                  <HiOutlineLocationMarker color='#fff'/>
                 </div>
                 <p style={{ color: theme.tertiary }}>{contactsData.address}</p>
               </div>
 
               <div className="socialmedia-icons">
-                {socialsData.twitter && (
-                  <a
-                    href={socialsData.twitter}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={"socialIcon"}
-                  >
-                    <FaTwitter />
-                  </a>
-                )}
                 {socialsData.github && (
-                  <a
-                    href={socialsData.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={"socialIcon"}
-                  >
-                    <FaGithub />
-                  </a>
+                  <IconButton size="large" aria-label="twitter">
+                    <a
+                      href={socialsData.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={socialIcon}
+                    >
+                      <FaGithub color='#fff'/>
+                    </a>
+                  </IconButton>
                 )}
                 {socialsData.linkedIn && (
                   <a
                     href={socialsData.linkedIn}
                     target="_blank"
                     rel="noreferrer"
-                    className={"socialIcon"}
+                    style={socialIcon}
                   >
-                    <FaLinkedinIn />
+                    <FaLinkedinIn color='#fff'/>
                   </a>
                 )}
                 {socialsData.instagram && (
@@ -316,9 +316,9 @@ function Contacts() {
                     href={socialsData.instagram}
                     target="_blank"
                     rel="noreferrer"
-                    className={"socialIcon"}
+                    style={socialIcon}
                   >
-                    <FaInstagram />
+                    <FaInstagram color='#fff'/>
                   </a>
                 )}
               </div>
@@ -327,7 +327,6 @@ function Contacts() {
         </div>
         <img src={theme.contactsimg} alt="contacts" className="contacts--img" />
       </div>
-    </ContactContainer>
   );
 }
 

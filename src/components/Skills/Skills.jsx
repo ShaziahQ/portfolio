@@ -5,7 +5,6 @@ import './Skills.css'
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { skillsData } from '../../data/skillsData'
-import { skillsImage } from '../../utils/skillsImage'
 
 function Skills() {
 
@@ -13,7 +12,7 @@ function Skills() {
 
     const skillBoxStyle = {
         backgroundColor: theme.secondary,
-        boxShadow: `0px 0px 30px ${theme.primary30}`
+        boxShadow: "rgba(130, 58, 224, 1) 0px 0px 10px"
     }
 
     return (
@@ -25,7 +24,7 @@ function Skills() {
                 <div className="skill--scroll">
                     <Marquee 
                         gradient={false} 
-                        speed={80} 
+                        speed={150} 
                         pauseOnHover={true}
                         pauseOnClick={true} 
                         delay={0}
@@ -34,9 +33,9 @@ function Skills() {
                     >
                         {skillsData.map((skill, id) => (
                             <div className="skill--box" key={id} style={skillBoxStyle}>
-                                <img src={skillsImage(skill)} alt={skill} />
-                                <h3 style={{color: theme.tertiary}}>
-                                    {skill}
+                                <img src={skill.imagePath} alt={skill} />
+                                <h3 style={{color: theme.tertiary, textTransform:"capitalize"}}>
+                                    {skill.label}
                                 </h3>
                             </div>
                         ))}

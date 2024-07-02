@@ -7,8 +7,9 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 import eduImgWhite from '../../assets/svg/education/eduImgWhite.svg';
 import eduImgBlack from '../../assets/svg/education/eduImgBlack.svg';
 import './Education.css';
+import { Slide } from '@mui/material';
 
-function EducationCard({ id, institution, course, startYear, endYear }) {
+function EducationCard({ id, institution, course, startYear, endYear, isVisible }) {
   const { theme } = useContext(ThemeContext);
 
   const Container = styled.div({
@@ -22,7 +23,7 @@ function EducationCard({ id, institution, course, startYear, endYear }) {
 
 
   return (
-    <>
+    <Slide direction="right" timeout={1500} in={isVisible} unmountOnExit>
       <Container key={id} className={`education-card `}>
         <div className="educard-img" style={{ backgroundColor: theme.primary }}>
           <img
@@ -38,7 +39,7 @@ function EducationCard({ id, institution, course, startYear, endYear }) {
           <h5 style={{ color: theme.tertiary80 }}>{institution}</h5>
         </div>
       </Container>
-    </>
+      </Slide>
   );
 }
 
