@@ -6,7 +6,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-import { ThemeContext } from './contexts/ThemeContext';
+import { ThemeContext } from './contexts/ThemeContext.jsx';
 import { Main, ProjectPage } from './pages';
 import { BackToTop } from './components';
 import ScrollToTop from './utils/ScrollToTop.jsx';
@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="app">
       <Router>
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/projects" exact component={ProjectPage} />
@@ -37,7 +37,7 @@ function App() {
           <Redirect to="/" />
         </Switch>
       </Router>
-      <BackToTop />
+      {/* <BackToTop /> */}
     </div>
   );
 }

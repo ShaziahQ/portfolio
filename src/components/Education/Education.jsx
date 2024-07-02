@@ -1,18 +1,15 @@
 import React, { useContext } from 'react';
-
 import { ThemeContext } from '../../contexts/ThemeContext';
-
 import './Education.css'
 import EducationCard from './EducationCard';
-
+import useElementVisible from '../../hooks/useElementVisible';
 import { educationData } from '../../data/educationData'
 
 function Education() {
-
     const { theme } = useContext(ThemeContext);
+    const {isVisible, targetRef}  = useElementVisible()
     return (
-        <div className="education" id="resume" style={{backgroundColor: theme.secondary}}>
-           
+        <div ref={targetRef} className="education" id="resume" style={{backgroundColor: theme.secondary}}>
             <div className="education-body">
                 <div className="education-description">
                 <h1 style={{color:theme.primary}}>Education</h1>
@@ -24,6 +21,7 @@ function Education() {
                             course={edu.course}
                             startYear={edu.startYear}
                             endYear={edu.endYear}
+                            isVisible={isVisible}
                         />
                     ))}
                 </div>

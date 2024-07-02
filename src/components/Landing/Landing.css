@@ -92,7 +92,7 @@
 
 .lcr-buttonContainer {
   margin-top: 2rem;
-  width: 350px;
+  /* width: 32rem; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -125,7 +125,6 @@
   .lcr-buttonContainer {
     margin-top: 1rem;
     flex-direction: column;
-    width: 200px;
     height: 120px;
     align-items: flex-start;
   }
@@ -148,12 +147,7 @@
   .lcr-buttonContainer {
     margin-top: 1rem;
     flex-direction: column;
-    width: 200px;
-    height: 120px;
     align-items: flex-start;
-  }
-  .lcr-buttonContainer button:nth-child(2) {
-    display: none;
   }
 }
 
@@ -209,7 +203,7 @@
   }
   .lcr-buttonContainer {
     margin: 0 auto;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
   }

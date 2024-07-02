@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { makeStyles } from '@mui/material';;
+import styled from '@emotion/styled'
 import { AiOutlineHome } from 'react-icons/ai';
 
 import './ProjectPage.css';
@@ -20,7 +20,7 @@ function ProjectPage() {
     return content.toLowerCase().includes(search.toLowerCase());
   });
 
-  const useStyles = makeStyles((t) => ({
+  const Container = styled.div({
     search: {
       color: theme.tertiary,
       width: '40%',
@@ -67,9 +67,8 @@ function ProjectPage() {
         fontSize: '1.8rem',
       },
     },
-  }));
+  })
 
-  const classes = useStyles();
 
   return (
     <div className="projectPage" style={{ backgroundColor: theme.secondary }}>
@@ -81,7 +80,7 @@ function ProjectPage() {
         style={{ backgroundColor: theme.primary }}
       >
         <Link to="/">
-          <AiOutlineHome className={classes.home} />
+          <AiOutlineHome className={"home"} />
         </Link>
         <h1 style={{ color: theme.secondary }}>Projects</h1>
       </div>
@@ -92,7 +91,7 @@ function ProjectPage() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search project..."
-            className={classes.search}
+            className={"search"}
           />
         </div>
         <div className="project-container">

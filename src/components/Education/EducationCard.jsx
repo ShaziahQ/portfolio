@@ -1,30 +1,30 @@
 import React, { useContext } from 'react';
-import { makeStyles } from '@mui/material';
-// import Fade from 'react-reveal/Fade';
+import styled from '@emotion/styled'
+
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 
 import eduImgWhite from '../../assets/svg/education/eduImgWhite.svg';
 import eduImgBlack from '../../assets/svg/education/eduImgBlack.svg';
 import './Education.css';
+import { Slide } from '@mui/material';
 
-function EducationCard({ id, institution, course, startYear, endYear }) {
+function EducationCard({ id, institution, course, startYear, endYear, isVisible }) {
   const { theme } = useContext(ThemeContext);
 
-  const useStyles = makeStyles((t) => ({
+  const Container = styled.div({
     educationCard: {
       backgroundColor: theme.primary30,
       '&:hover': {
         backgroundColor: theme.primary50,
       },
     },
-  }));
+  });
 
-  const classes = useStyles();
 
   return (
-    <>
-      <div key={id} className={`education-card ${classes.educationCard}`}>
+    <Slide direction="right" timeout={1500} in={isVisible} unmountOnExit>
+      <Container key={id} className={`education-card `}>
         <div className="educard-img" style={{ backgroundColor: theme.primary }}>
           <img
             src={theme.type === 'light' ? eduImgBlack : eduImgWhite}
@@ -38,8 +38,8 @@ function EducationCard({ id, institution, course, startYear, endYear }) {
           <h4 style={{ color: theme.tertiary }}>{course}</h4>
           <h5 style={{ color: theme.tertiary80 }}>{institution}</h5>
         </div>
-      </div>
-    </>
+      </Container>
+      </Slide>
   );
 }
 

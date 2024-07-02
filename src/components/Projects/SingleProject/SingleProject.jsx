@@ -1,14 +1,14 @@
 import React from 'react'
-import { makeStyles } from '@mui/material';;
+import styled from '@emotion/styled'
 import { FaPlay, FaCode } from "react-icons/fa";
-import Fade from 'react-reveal/Fade';
+// import Fade from 'react-reveal/Fade';
 
 import placeholder from '../../../assets/png/placeholder.png'
 import './SingleProject.css'
 
 function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
 
-    const useStyles = makeStyles((t) => ({
+    const Container = styled.div({
         iconBtn : {
             display: 'flex',
             alignItems: 'center',
@@ -33,22 +33,21 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
 
             },
         },
-    }));
+    })
 
-    const classes = useStyles();
 
     return (
-        <Fade bottom>
+        <Container>
             <div key={id} className="singleProject" style={{backgroundColor: theme.primary400}}>
                 <div className="projectContent">
                     <h2 style={{color: theme.tertiary}}>{name}</h2>
                     <img src={image ? image : placeholder} alt={name} /> 
                     <div className="project--showcaseBtn">
-                        <a href={demo} target="_blank" rel="noreferrer" className={classes.iconBtn}>
-                            <FaPlay className={classes.icon}/>
+                        <a href={demo} target="_blank" rel="noreferrer" className={"iconBtn"}>
+                            <FaPlay className={"icon"}/>
                         </a>
-                        <a href={code} target="_blank" rel="noreferrer" className={classes.iconBtn}>
-                            <FaCode className={classes.icon}/>
+                        <a href={code} target="_blank" rel="noreferrer" className={"iconBtn"}>
+                            <FaCode className={"icon"}/>
                         </a>
                     </div>
                 </div>
@@ -61,7 +60,7 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
                     ))}
                 </div>
             </div>
-        </Fade>
+        </Container>
     )
 }
 

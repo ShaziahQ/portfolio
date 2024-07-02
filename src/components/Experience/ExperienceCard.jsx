@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import { makeStyles } from '@mui/material';
-// import Fade from 'react-reveal/Fade';
+import styled from '@emotion/styled'
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 
@@ -8,25 +7,25 @@ import expImgWhite from '../../assets/svg/experience/expImgWhite.svg';
 import expImgBlack from '../../assets/svg/experience/expImgBlack.svg';
 
 import './Experience.css';
+import { Slide } from '@mui/material';
 
-function ExperienceCard({ id, company, jobtitle, startYear, endYear }) {
+function ExperienceCard({ id, company, jobtitle, startYear, endYear, isVisible }) {
   const { theme } = useContext(ThemeContext);
 
-  const useStyles = makeStyles((t) => ({
+
+  const Container = styled.div({
     experienceCard: {
       backgroundColor: theme.primary30,
       '&:hover': {
         backgroundColor: theme.primary50,
       },
     },
-  }));
+  })
 
-  const classes = useStyles();
 
   return (
-    // <Fade bottom>
-    <>
-      <div key={id} className={`experience-card ${classes.experienceCard}`}>
+    <Slide direction="left" timeout={1500} in={isVisible} unmountOnExit={false}>
+      <Container key={id} className={`experience-card`}>
         <div className="expcard-img" style={{ backgroundColor: theme.primary }}>
           <img
             src={theme.type === 'light' ? expImgBlack : expImgWhite}
@@ -40,9 +39,8 @@ function ExperienceCard({ id, company, jobtitle, startYear, endYear }) {
           <h4 style={{ color: theme.tertiary }}>{jobtitle}</h4>
           <h5 style={{ color: theme.tertiary80 }}>{company}</h5>
         </div>
-      </div>
-    </>
-    // </Fade>
+      </Container>
+    </Slide>
   );
 }
 
