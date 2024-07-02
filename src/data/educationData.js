@@ -1,23 +1,23 @@
 export const educationData = [
     {
         id: 1,
-        institution: 'Sarat Rout High School',
-        course: 'Board of Seconday Education',
-        startYear: '2003',
-        endYear: '2013'
+        institution: 'DRIEMS College',
+        course: "Bachelor's in Computer Science",
+        startYear: '2016',
+        endYear: '2020'
     },
     {
         id: 2,
-        institution: 'Kalinga Xavier College of Science & Commerce',
-        course: 'Council of Higher Secondary Education',
-        startYear: '2013',
-        endYear: '2015'
+        institution: "Bhadrak Women's College",
+        course: '12th in Science (CHSE)',
+        startYear: '2014',
+        endYear: '2016'
     },
     {
         id: 3,
-        institution: 'Centurion University',
-        course: 'Bachelor of Technology in CSE',
-        startYear: '2015',
-        endYear: '2019'
+        institution: 'SunShine Mission School',
+        course: '10th (ICSE)',
+        startYear: '2013',
+        endYear: '2014'
     },
 ]

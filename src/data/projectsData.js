@@ -15,18 +15,18 @@ import twelve from '../assets/svg/projects/twelve.svg'
 export const projectsData = [
     {
         id: 1,
-        projectName: 'Library Management System',
-        projectDesc: 'This project aims to build an library management system that manages all the library details of schools & colleges',
-        tags: ['JSP', 'SERVLET', 'MYSQL','HTML','CSS','JS','BOOTSTRAP'],
+        projectName: 'Global Asset Management',
+        projectDesc: 'This project is designed to track all the datas coming from multiple adapters.',
+        tags: ['HTML','CSS','JS','BOOTSTRAP','MYSQL'],
         code: 'https://github.com/cse5a/E-LIBRARY',
         //demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
         image: one
     },
     {
         id: 2,
-        projectName: 'Weather Portal',
-        projectDesc: 'This project is a weather portal system that allows users to know weather of a area.',
-        tags: ['SPRINGBOOT', 'HTML','CSS'],
+        projectName: 'Company Dashboard',
+        projectDesc: 'This project is designed for the internal management and tracking employees information under the individual managers .',
+        tags: [ 'Ux Desing', 'Visual Design', 'Wireframing', 'Figma','Miro'],
         code: 'https://github.com/sipundhal/WeatherProjectFrontEnd',
         //demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
         image: two

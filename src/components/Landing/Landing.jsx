@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Button } from '@mui/material'
 import { NavHashLink as NavLink } from 'react-router-hash-link';
-import { makeStyles } from '@mui/material';;
+import styled from '@emotion/styled'
 
 import './Landing.css'
 import { ThemeContext } from '../../contexts/ThemeContext'
@@ -14,7 +14,7 @@ import { FaTwitter, FaLinkedin, FaGithub, FaInstagram,} from "react-icons/fa";
 function Landing() {
     const { theme, drawerOpen }  = useContext(ThemeContext)
 
-    const useStyles = makeStyles((t) => ({
+    const Container = styled.div({
         resumeBtn : {
             color: theme.primary,
             borderRadius: '30px',
@@ -31,9 +31,6 @@ function Landing() {
                 backgroundColor: theme.tertiary,
                 color: theme.secondary,
                 border: `3px solid ${theme.tertiary}`,
-            },
-            [t.breakpoints.down('sm')]: {
-                width: '180px',
             },
         },
         contactBtn : {
@@ -54,15 +51,15 @@ function Landing() {
                 color: theme.tertiary,
                 border: `3px solid ${theme.tertiary}`,
             },
-            [t.breakpoints.down('sm')]: {
-                display: 'none',
-            },
+            // [t.breakpoints.down('sm')]: {
+            //     display: 'none',
+            // },
         }
-    }));
-
-    const classes = useStyles();
+    })
 
     return (
+        <Container>
+
         <div className="landing" >
             <div className="landing--container">
                 <div className="landing--container-left" style={{backgroundColor: theme.primary}}>
@@ -89,7 +86,7 @@ function Landing() {
                         )}       
                     </div>
                 </div>
-                <img src={process.env.PUBLIC_URL + "/pic.jpg"} alt="" className="landing--img" style={{ opacity: `${drawerOpen ? '0' : '1'}`, borderColor: theme.secondary}}/>
+                {/* <img src={process.env.PUBLIC_URL + "/pic.jpg"} alt="" className="landing--img" style={{ opacity: `${drawerOpen ? '0' : '1'}`, borderColor: theme.secondary}}/> */}
                 <div className="landing--container-right" style={{backgroundColor: theme.secondary}}>
                     <div className="lcr--content" style={{color: theme.tertiary}}>
                         <h6>{headerData.title}</h6>
@@ -99,17 +96,18 @@ function Landing() {
                         <div className="lcr-buttonContainer">
                             {headerData.resumePdf && (
                                 <a href={headerData.resumePdf} download="resume" target="_blank" rel="noreferrer">
-                                    <Button className={classes.resumeBtn}>Download CV</Button>
+                                    <Button className={"resumeBtn"}>Download CV</Button>
                                 </a>
                             )}
                             <NavLink to="/#contacts" smooth={true} spy="true" duration={2000}>
-                                <Button className={classes.contactBtn}>Contact</Button>
+                                <Button className={"contactBtn"}>Contact</Button>
                             </NavLink>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+                        </Container>
     )
 }
 

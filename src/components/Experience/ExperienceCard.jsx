@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { makeStyles } from '@mui/material';
+import styled from '@emotion/styled'
+
 // import Fade from 'react-reveal/Fade';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
@@ -12,21 +13,20 @@ import './Experience.css';
 function ExperienceCard({ id, company, jobtitle, startYear, endYear }) {
   const { theme } = useContext(ThemeContext);
 
-  const useStyles = makeStyles((t) => ({
+  const Container = styled.div({
     experienceCard: {
       backgroundColor: theme.primary30,
       '&:hover': {
         backgroundColor: theme.primary50,
       },
     },
-  }));
+  })
 
-  const classes = useStyles();
 
   return (
     // <Fade bottom>
     <>
-      <div key={id} className={`experience-card ${classes.experienceCard}`}>
+      <Container key={id} className={`experience-card`}>
         <div className="expcard-img" style={{ backgroundColor: theme.primary }}>
           <img
             src={theme.type === 'light' ? expImgBlack : expImgWhite}
@@ -40,7 +40,7 @@ function ExperienceCard({ id, company, jobtitle, startYear, endYear }) {
           <h4 style={{ color: theme.tertiary }}>{jobtitle}</h4>
           <h5 style={{ color: theme.tertiary80 }}>{company}</h5>
         </div>
-      </div>
+      </Container>
     </>
     // </Fade>
   );
