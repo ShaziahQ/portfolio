@@ -22,9 +22,9 @@ function ExperienceCard({ id, company, jobtitle, startYear, endYear, isVisible }
     },
   })
 
-
+console.log(isVisible)
   return (
-    <Slide direction="left" timeout={1500} in={isVisible} unmountOnExit={false}>
+    <Slide direction="left" timeout={1500} in={isVisible} mountOnEnter>
       <Container key={id} className={`experience-card`}>
         <div className="expcard-img" style={{ backgroundColor: theme.primary }}>
           <img
