@@ -163,7 +163,7 @@ function Navbar() {
           <div onClick={handleDrawerClose}>
             <div className="navLink--container">
               <>
-                <NavLink to="/" smooth={true} spy="true" duration={2000}>
+                <NavLink to="/"  spy="true" duration={2000}>
                   <div className={"drawerItem"}>
                     <IoHomeSharp className={"drawerIcon"} />
                     <span className={"drawerLinks"}>Home</span>
@@ -172,7 +172,7 @@ function Navbar() {
               </>
 
               <>
-                <NavLink to="/#about" smooth={true} spy="true" duration={2000}>
+                <NavLink to="/#about"  spy="true" duration={2000}>
                   <div className={"drawerItem"}>
                     <FaUser className={"drawerIcon"} />
                     <span className={"drawerLinks"}>About</span>
@@ -181,7 +181,7 @@ function Navbar() {
               </>
 
               <>
-                <NavLink to="/#resume" smooth={true} spy="true" duration={2000}>
+                <NavLink to="/#resume"  spy="true" duration={2000}>
                   <div className={"drawerItem"}>
                     <HiDocumentText className={"drawerIcon"} />
                     <span className={"drawerLinks"}>Resume</span>
@@ -190,7 +190,7 @@ function Navbar() {
               </>
 
               <>
-                <NavLink to="/#contacts" smooth={true} spy="true" duration={2000}>
+                <NavLink to="/#contacts"  spy="true" duration={2000}>
                   <div className={"drawerItem"}>
                     <MdPhone className={"drawerIcon"} />
                     <span className={"drawerLinks"}>Contact</span>

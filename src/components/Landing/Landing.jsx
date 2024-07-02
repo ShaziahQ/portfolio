@@ -100,7 +100,7 @@ function Landing() {
                                   const element = document.getElementById("contacts");
                                   element.scroll = element.scrollHeight;
                             }}>
-                                <a href="/#contacts" style={{ all: "unset" }} smooth={true} spy="true" duration={2000}>
+                                <a href="/#contacts" style={{ all: "unset" }} spy="true" duration={2000}>
                                     Contact
                                 </a>
                             </ContactBtn>

@@ -20,31 +20,32 @@ function ProjectPage() {
     return content.toLowerCase().includes(search.toLowerCase());
   });
 
-  const Container = styled.div({
-    search: {
-      color: theme.tertiary,
-      width: '40%',
-      height: '2.75rem',
-      outline: 'none',
-      border: 'none',
-      borderRadius: '20px',
-      padding: '0.95rem 1rem',
-      fontFamily: "'Noto Sans TC', sans-serif",
-      fontWeight: 500,
-      fontSize: '0.9rem',
-      backgroundColor: theme.secondary,
-      boxShadow:
-        theme.type === 'dark'
-          ? 'inset 3px 3px 6px #ffffff10, inset -3px -3px 6px #00000060'
-          : 'inset 3px 3px 6px #ffffffbd, inset -3px -3px 6px #00000030',
-      '&::placeholder': {
-        color: theme.tertiary80,
-      },
-      [t.breakpoints.down('sm')]: {
-        width: '350px',
-      },
+  const searchStyle= {
+    color: theme.tertiary,
+    width: '40%',
+    height: '2.75rem',
+    outline: 'none',
+    border: 'none',
+    borderRadius: '20px',
+    padding: '0.95rem 1rem',
+    fontFamily: "'Noto Sans TC', sans-serif",
+    fontWeight: 500,
+    fontSize: '0.9rem',
+    backgroundColor: theme.secondary,
+    boxShadow:
+      theme.type === 'dark'
+        ? 'inset 3px 3px 6px #ffffff10, inset -3px -3px 6px #00000060'
+        : 'inset 3px 3px 6px #ffffffbd, inset -3px -3px 6px #00000030',
+    '&::placeholder': {
+      color: theme.tertiary80,
     },
-    home: {
+    // [t.breakpoints.down('sm')]: {
+    //   width: '350px',
+    // },
+  }
+
+  
+   const home ={
       color: theme.secondary,
       position: 'absolute',
       top: 25,
@@ -63,11 +64,10 @@ function ProjectPage() {
         color: theme.tertiary,
         transform: 'scale(1.1)',
       },
-      [t.breakpoints.down('sm')]: {
-        fontSize: '1.8rem',
-      },
-    },
-  })
+      // [t.breakpoints.down('sm')]: {
+      //   fontSize: '1.8rem',
+      // },
+  }
 
 
   return (
@@ -80,7 +80,7 @@ function ProjectPage() {
         style={{ backgroundColor: theme.primary }}
       >
         <Link to="/">
-          <AiOutlineHome className={"home"} />
+          <AiOutlineHome style={home} />
         </Link>
         <h1 style={{ color: theme.secondary }}>Projects</h1>
       </div>
@@ -91,7 +91,7 @@ function ProjectPage() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search project..."
-            className={"search"}
+            style={searchStyle}
           />
         </div>
         <div className="project-container">
