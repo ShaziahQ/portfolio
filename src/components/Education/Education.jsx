@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import './Education.css'
 import EducationCard from './EducationCard';
-import useElementVisible from '../../hooks/useElementVisible';
+import useIntersection from '../../hooks/useIntersection';
 import { educationData } from '../../data/educationData'
 
 function Education() {
     const { theme } = useContext(ThemeContext);
-    const {isVisible, targetRef}  = useElementVisible()
+    const {isVisible, targetRef}  = useIntersection()
     return (
         <div ref={targetRef} className="education" style={{backgroundColor: theme.secondary}}>
             <div className="education-body">

@@ -98,13 +98,13 @@
 
 
 @media (min-width: 992px) and (max-width: 1380px) {
-
+    
 }
 
 
 @media screen and (max-width: 992px) {
-    .experience {
-        min-height: 100%;
+    .experience{
+        min-height: 50vh;
     }
     .experience-image {
         display: none;

@@ -179,7 +179,7 @@
     width: 100%;
     background-color: #eaeaea;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     padding: 0 2rem;
   }
   .lcr--content {
@@ -202,10 +202,9 @@
     width: 90%;
   }
   .lcr-buttonContainer {
-    margin: 0 auto;
-    display: none;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    margin-top: 10rem;
   }
   .lcr-buttonContainer button {
     margin-top: -20%;
@@ -214,12 +213,12 @@
 
 @media (max-width: 500px) {
   .lcr--content {
-    margin-top: 35%;
+    margin-top: -7rem;
   }
 }
 @media (max-width: 370px) {
   .lcr--content {
-    margin-top: 60%;
+    margin-top: 10vh;
   }
 }
 

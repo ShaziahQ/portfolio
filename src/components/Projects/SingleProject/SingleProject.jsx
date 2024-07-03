@@ -6,7 +6,7 @@ import { FaPlay, FaCode } from "react-icons/fa";
 import placeholder from '../../../assets/png/placeholder.png'
 import './SingleProject.css'
 
-function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
+function SingleProject({ id, name, desc, tags, projectSrc, image, theme }) {
 
     const Container = styled.div({
         iconBtn : {
@@ -43,11 +43,8 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
                     <h2 style={{color: theme.tertiary}}>{name}</h2>
                     <img src={image ? image : placeholder} alt={name} /> 
                     <div className="project--showcaseBtn">
-                        <a href={demo} target="_blank" rel="noreferrer" className={"iconBtn"}>
+                        <a href={projectSrc} target="_blank" rel="noreferrer" className={"iconBtn"}>
                             <FaPlay className={"icon"}/>
-                        </a>
-                        <a href={code} target="_blank" rel="noreferrer" className={"iconBtn"}>
-                            <FaCode className={"icon"}/>
                         </a>
                     </div>
                 </div>
