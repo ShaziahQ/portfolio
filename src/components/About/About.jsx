@@ -19,7 +19,6 @@ function About() {
             <div className="about-body">
                 <div className="about-description">
                     <h2 style={{ color: theme.primary, textAlign: "center" }}>{aboutData.title}</h2>
-                    <p style={{ color: theme.tertiary80, alignSelf: "center", marginBottom: "0.5rem" }}>{aboutData.Subtitle}</p>
                     <p style={{ color: theme.tertiary80, textAlign: "justify" }}>{aboutData.description}</p>
                 </div>
                 <div className="about-img">

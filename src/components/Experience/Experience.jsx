@@ -6,12 +6,12 @@ import './Experience.css';
 
 import { experienceData } from '../../data/experienceData'
 import ExperienceCard from './ExperienceCard';
-import useElementVisible from '../../hooks/useElementVisible';
+import useIntersection from '../../hooks/useIntersection';
 
 
 function Experience() {
     const { theme } = useContext(ThemeContext);
-    const { isVisible, targetRef } = useElementVisible()
+    const { isVisible, targetRef } = useIntersection()
     return (
         <div ref={targetRef} className="experience" style={{ backgroundColor: theme.secondary }}>
             <div className="experience-body">

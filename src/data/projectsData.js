@@ -18,21 +18,24 @@ export const projectsData = [
         projectName: 'Gallery Link-Up',
         projectDesc: 'This case study is self designed for artist to sahre, explore and book ticket for exhibitons or museum.',
         tags: ['UI Design','UX Design','Prototyping','Wireframe','User Research', 'Figma', 'Miro'],
-        image: one
+        image: one,
+        projectSrc:"https://www.behance.net/gallery/198826859/An-artist-meet-up-app-Gallery-LinkUp"
     },
     {
         id: 2,
         projectName: 'TODO Application',
         projectDesc: 'This project is designed to help users to keep notes, check progress and set reminders.',
         tags: ['UI Design','UX Design','Prototyping','Wireframe','User Research', 'Figma', 'Miro'],
-        image: two
+        image: two,
+        projectSrc: "https://www.behance.net/gallery/200248809/Todo-Application-Case-Study"
     },
     {
         id: 3,
         projectName: 'Dashboard',
         projectDesc: 'This project is designed for the manage and tracking employees information under the individual managers.',
         tags: ['UI Design','UX Design','Prototyping','Wireframe','User Research', 'Figma', 'Miro'],
-        image: three
+        image: three,
+        projectSrc: "https://www.behance.net/gallery/201779777/Dashboard"
     },
     {
         id: 4,

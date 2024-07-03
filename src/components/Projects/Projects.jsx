@@ -59,8 +59,7 @@ function Projects() {
                                     name={project.projectName}
                                     desc={project.projectDesc}
                                     tags={project.tags}
-                                    code={project.code}
-                                    demo={project.demo}
+                                    projectSrc={project.projectSrc}
                                     image={project.image}
                                 />
                             ))}
