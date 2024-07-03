@@ -189,7 +189,7 @@
   }
 
   .lcr--content {
-    margin-top: 10rem;
+    margin-top: 10vh;
     width: 100%;
   }
 
@@ -213,7 +213,7 @@
   .lcr-buttonContainer {
     align-items: center;
     justify-content: space-around;
-    margin-top: 10rem;
+    margin-top: 5rem;
   }
 
   .lcr-buttonContainer button {
