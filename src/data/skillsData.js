@@ -1,12 +1,56 @@
 export const skillsData = [
     {
-        label: "HTML",
-        imagePath: "html.svg"
+        label: "UI Design",
+        imagePath: "uidesign.svg"
     },
-
+    {
+        label: "UX Design",
+        imagePath: "uxdesign.svg"
+    },
+    {
+        label: "Wireframe",
+        imagePath: "wireframe.svg"
+    },
+    {
+        label: "Prototyping",
+        imagePath: "prototype.svg"
+    },
+    {
+        label: "User Research",
+        imagePath: "userresearch.svg"
+    },
+    {
+        label: "Visual Design",
+        imagePath: "visualdesign.svg"
+    },
+    {
+        label: "Usability Testing",
+        imagePath: "usabilitytesting.svg"
+    },
+    {
+        label: "figma",
+        imagePath: "figma.svg"
+    },
+    {
+        label: "sketch",
+        imagePath: "sketch.svg"
+    },
+    {
+        label: "canva",
+        imagePath: "canva.svg"
+    },
+    {
+        label: "miro",
+        imagePath: "miro.svg"
+    },
     {
         label: "Photoshop",
         imagePath: "photoshop.svg"
+    },
+
+    {
+        label: "HTML",
+        imagePath: "html.svg"
     },
     {
         label: "illustrator",
@@ -56,22 +100,6 @@ export const skillsData = [
     {
         label: "blender",
         imagePath: "blender.svg"
-    },
-    {
-        label: "figma",
-        imagePath: "figma.svg"
-    },
-    {
-        label: "sketch",
-        imagePath: "sketch.svg"
-    },
-    {
-        label: "canva",
-        imagePath: "canva.svg"
-    },
-    {
-        label: "miro",
-        imagePath: "miro.svg"
-    },
+    }
 
 ]
